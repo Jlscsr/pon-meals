@@ -1,0 +1,33 @@
+@import "../../styles/variables.scss";
+@import "../../styles/functions.scss";
+
+.header {
+  width: 100%;
+  max-width: $mx-width;
+  margin-inline: auto;
+  border-bottom: 1px solid $accent-1;
+
+  &__navbar {
+    @include align-center;
+
+    &__logo {
+      margin-right: $lg;
+      a,
+      span {
+        font-family: $bold-font;
+        font-size: $ft-lg;
+      }
+    }
+    &__nav-links {
+      @include align-center;
+      gap: $sm;
+      padding: $sm;
+      &__nav-item {
+        &__route {
+          font-family: $light-font;
+          font-size: $ft-md;
+        }
+      }
+    }
+  }
+}

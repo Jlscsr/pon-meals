@@ -1,0 +1,43 @@
+@import "../../styles/functions.scss";
+@import "../../styles/variables.scss";
+.search-view {
+  @include flex-center;
+  &__content {
+    @include flex-center;
+    flex-direction: column;
+    &__ask {
+      text-align: center;
+      margin: $xxl 0;
+      h1,
+      span {
+        font-family: $light-font;
+        font-size: $ft-lg;
+      }
+    }
+    &__input-container {
+      width: 100%;
+      max-width: 300px;
+      margin-top: $sm;
+
+      input {
+        width: 100%;
+        padding: $xs $sm;
+        font-size: $ft-sm;
+        font-family: $light-font;
+        font-weight: 300;
+        border: none;
+        border-bottom: 2px solid $accent-1;
+        background-color: transparent;
+        &::placeholder {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    &__button-container {
+      width: 100%;
+      @include flex-center;
+      margin-top: $xl;
+    }
+  }
+}

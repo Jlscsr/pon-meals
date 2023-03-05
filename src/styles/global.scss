@@ -1,0 +1,33 @@
+.page-container {
+  height: calc(100vh - 90px);
+  max-width: $mx-width;
+}
+
+.default-button {
+  width: 50%;
+  padding: $xs $lg;
+  font-size: $ft-sm;
+  background-color: $accent-2;
+  border: none;
+  transition: all 0.125s ease-out;
+  &:hover {
+    background-color: $accent-1;
+  }
+}
+
+.button-svg {
+  width: 50%;
+  @include flex-center;
+  padding: $xs $md;
+  border: none;
+  background-color: transparent;
+  transition: all 0.125s ease-out;
+  svg {
+    height: auto;
+    width: 100%;
+    max-width: 40px;
+  }
+  &:hover svg {
+    fill: $accent-1;
+  }
+}
