@@ -16,7 +16,7 @@
     }
     &__input-container {
       width: 100%;
-      max-width: 300px;
+      max-width: 250px;
       margin-top: $sm;
 
       input {
@@ -25,12 +25,21 @@
         font-size: $ft-sm;
         font-family: $light-font;
         font-weight: 300;
+        text-align: center;
         border: none;
         border-bottom: 2px solid $accent-1;
         background-color: transparent;
         &::placeholder {
-          font-size: 0.9rem;
+          font-size: $ft-sm;
         }
+      }
+    }
+
+    &__error-container {
+      p {
+        font-size: $ft-xs;
+        font-family: $semibold-font;
+        color: $error-color;
       }
     }
 

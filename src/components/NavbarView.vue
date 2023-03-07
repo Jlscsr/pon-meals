@@ -2,7 +2,7 @@
     <header class="header px-md py-sm">
         <nav class="header__navbar">
             <div class="header__navbar__logo">
-                <a href="/card-show">Pon <span class="text-accent-1">Meals</span></a>
+                <a href="/">Pon <span class="text-accent-1">Meals</span></a>
             </div>
             <ul class="header__navbar__nav-links">
                 <li class="header__navbar__nav-links__nav-item">

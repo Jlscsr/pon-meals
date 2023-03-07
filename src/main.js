@@ -24,6 +24,11 @@ const router = createRouter({
       name: "countries",
       component: () => import("./components/CountriesView.vue"),
     },
+    {
+      path: "/show-meals/:name",
+      name: "show-meals",
+      component: () => import("./components/MealsCard.vue"),
+    },
   ],
   linkActiveClass: "active-link",
 });

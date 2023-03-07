@@ -7,10 +7,14 @@
             <div class="search-view__content__input-container">
                 <div class="search-view__content__input-container__input">
                     <input v-model="foodName" type="text" placeholder="e.g. eggs, chicken, or soup" name="foodname" required
-                        autocomplete="off" aria-label="Food name" aria-required="true">
+                        @focus="onFocused()" autocomplete="off" aria-label="Food name" aria-required="true"
+                        @keyup.enter="searchMeals(foodName)">
+                    <div class="search-view__content__error-container" :class="{ 'hide-error': isInputFocused }">
+                        <p>Invalid input!</p>
+                    </div>
                 </div>
                 <div class="search-view__content__button-container">
-                    <button class="button-svg border-radius-3">
+                    <button class="button-svg border-radius-3" @click="searchMeals(foodName)">
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
                             xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 512.009 512.009"
                             xml:space="preserve">
@@ -27,17 +31,7 @@
     </div>
 </template>
 
-<script>
-import { ref } from "vue";
-export default {
-    setup() {
-        let foodName = ref(null);
-        return {
-            foodName
-        }
-    }
-}
-</script>
+<script src="./script/search.js"></script>
 
 <style lang="scss">
 @import "./style/searchView.scss";

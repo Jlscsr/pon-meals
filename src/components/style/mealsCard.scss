@@ -1,0 +1,58 @@
+@import "../../styles/variables.scss";
+@import "../../styles/functions.scss";
+.meals {
+  width: 100%;
+  max-width: $mx-width;
+  margin-inline: auto;
+  &__header {
+    margin-bottom: $sm;
+    text-align: center;
+
+    h1 {
+      font-family: "Open Sans Light";
+      font-size: $ft-xl;
+    }
+  }
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    place-items: center center;
+    gap: $sm;
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    margin-top: $lg;
+    padding: $xs;
+    &__card {
+      padding: $md;
+      border: 1px solid $accent-2;
+      &__img {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: $sm;
+      }
+
+      &__contents {
+        @include flex-column;
+        width: 100%;
+        margin: $sm 0;
+        gap: $xs;
+
+        &__heading {
+          @include flex-between;
+          flex-wrap: wrap;
+
+          &__meal-name {
+            width: 100%;
+            max-width: 200px;
+          }
+        }
+
+        &__button {
+          @include flex-center;
+          margin-top: $md;
+        }
+      }
+    }
+  }
+}
