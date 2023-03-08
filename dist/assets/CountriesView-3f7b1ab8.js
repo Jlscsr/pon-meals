@@ -1,0 +1,1 @@
+import{_ as e,o as s,c as o,b as t}from"./index-5fa608ce.js";const c={},n={class:"countries"},r=t("h2",null,"Countries",-1),_=[r];function a(i,d){return s(),o("div",n,_)}const u=e(c,[["render",a]]);export{u as default};
