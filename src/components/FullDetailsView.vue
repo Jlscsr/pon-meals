@@ -4,18 +4,18 @@
             <div class="meal__card__first-row">
                 <div class="meal__card__first-row__meal-details">
                     <div class="meal__card__first-row__meal-details__name">
-                        <h1>{{ selectedMeal.strMeal }}</h1>
+                        <h1>{{ mealsDetails.strMeal }}</h1>
                     </div>
                     <div class="meal__card__first-row__meal-details__category-country">
-                        <h3>{{ selectedMeal.strArea }}</h3>
-                        <h3>{{ selectedMeal.strCategory }}</h3>
+                        <h3>{{ mealsDetails.strArea }}</h3>
+                        <h3>{{ mealsDetails.strCategory }}</h3>
                     </div>
                     <div class="meal__card__first-row__meal-details__youtube-btn">
-                        <a :href="selectedMeal.strYoutube" target="_blank" class="default-button">Video Tutorial</a>
+                        <a :href="mealsDetails.strYoutube" target="_blank" class="default-button">Video Tutorial</a>
                     </div>
                 </div>
                 <div class="meal__card__first-row__meal-img">
-                    <img :src="selectedMeal.strMealThumb" :alt="selectedMeal.strMeall">
+                    <img :src="mealsDetails.strMealThumb" :alt="mealsDetails.strMeall">
                 </div>
             </div>
             <div class="meal__card__second-row">
@@ -27,7 +27,7 @@
                     </ul>
                 </div>
                 <div class="meal__card__second-row__instructions">
-                    <p>{{ selectedMeal.strInstructions }}</p>
+                    <p>{{ mealsDetails.strInstructions }}</p>
                 </div>
             </div>
         </div>
@@ -40,36 +40,39 @@ import { useRoute } from "vue-router";
 import { getMeals } from "../composables/PonMeals";
 export default {
     setup() {
-        let route = useRoute();
-        let selectedMeal = ref(null);
+        let { params } = useRoute();
+        let mealsDetails = ref(null);
 
-        if (route.params.id) {
-            selectedMeal.value = getMeals.value.find((meal) => meal.idMeal === route.params.id);
+        if (params.id) {
+            let meals = getMeals.value;
+            mealsDetails.value = meals.find((meal) => meal.idMeal === params.id);
+        }
+
+        const getIngredients = (meal) => {
+            let ingredients = [];
+
+            for (let i = 1; i <= 20; i++) {
+                let ingredientKey = meal[`strIngredient${i}`];
+                let measureKey = meal[`strMeasure${i}`];
+
+                if (ingredientKey && measureKey) {
+                    let ingredient = `${ingredientKey} (${measureKey})`;
+                    ingredients.push(ingredient);
+                }
+            }
+            return ingredients;
         }
 
         const ingredients = computed(() => {
-            let ingredientsKey = Object.keys(selectedMeal.value)
-                .filter((key) => key.startsWith('strIngredient') && selectedMeal.value[key]);
-
-            console.log(ingredientsKey);
-
-            let measureKeys = Object.keys(selectedMeal.value)
-                .filter((key) => key.startsWith('strMeasure') && selectedMeal.value[key]);
-
-            console.log(measureKeys);
-
-            return ingredientsKey.map((ingredientKey, index) => {
-                let ingredient = selectedMeal.value[ingredientKey];
-                let measure = selectedMeal.value[measureKeys[index]];
-                return `${ingredient} (${measure})`;
-            })
+            if (mealsDetails.value) {
+                return getIngredients(mealsDetails.value);
+            }
+            return [];
         })
 
-
-
         return {
-            route,
-            selectedMeal,
+            route: useRoute(),
+            mealsDetails,
             ingredients
         }
     }

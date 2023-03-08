@@ -22,17 +22,6 @@
     </div>
 </template>
 
-<script>
-import { ref } from "vue";
-export default {
-    setup() {
-        return {
-
-        }
-    }
-}
-</script>
-
 <style lang="scss">
 @import "./style/categories.scss"
 </style>

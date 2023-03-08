@@ -46,29 +46,36 @@
 import { ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { getMealsByName, getMeals } from "../composables/PonMeals";
+
 export default {
     setup() {
-        let route = useRoute();
-        let router = useRouter();
-        let pageLoadingState = ref(true);
-        let searchedMeals = ref(null);
-        let foodName = route.params.name;
-        let pageTitle = ref(`${foodName.charAt(0).toUpperCase()}${foodName.substring(1)}`);
+        const route = useRoute();
+        const router = useRouter();
+        const pageLoadingState = ref(true);
+        const searchedMeals = ref(null);
+        const foodName = ref(route.params.name);
+        const pageTitle = ref(`${foodName.value.charAt(0).toUpperCase()}${foodName.value.substring(1)}`);
 
-        foodName && getMealsByName(foodName).then((response) => {
-            if (response.status === 200) {
-                searchedMeals.value = getMeals.value;
-                pageLoadingState.value = false;
+        const searchForMeals = async () => {
+            try {
+                const response = await getMealsByName(foodName.value);
+                if (response.status === 200) {
+                    searchedMeals.value = getMeals.value;
+                    pageLoadingState.value = false;
+                }
+            } catch (error) {
+                console.log(error);
             }
-        }).catch((response) => {
-            alert(response)
-        })
+        }
+
+        if (foodName.value) {
+            searchForMeals();
+        }
 
         const seeFullDetails = (id) => {
             if (id) {
-                router.push({ name: 'full-details', params: { id: id } });
+                router.push({ name: 'full-details', params: { id } });
             }
-
         }
 
         return {
@@ -80,6 +87,7 @@ export default {
         }
     }
 }
+
 </script>
 
 <style lang="scss">

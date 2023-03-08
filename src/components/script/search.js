@@ -1,6 +1,5 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { getMealsByName } from "../../composables/PonMeals";
 
 export default {
   setup() {
