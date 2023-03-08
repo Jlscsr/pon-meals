@@ -29,6 +29,11 @@ const router = createRouter({
       name: "show-meals",
       component: () => import("./components/MealsCard.vue"),
     },
+    {
+      path: "/full-details/:id",
+      name: "full-details",
+      component: () => import("./components/FullDetailsView.vue"),
+    },
   ],
   linkActiveClass: "active-link",
 });

@@ -7,7 +7,7 @@
         <div class="meals__container">
             <div v-for="meal in searchedMeals" :key="meal.idMeal" class="meals__container__card border-radius-5">
                 <div class="meals__container__card__img border-radius-3">
-                    <img :src="meal.strMealThumb" :alt="meal.strMeal" class="border-radius-5">
+                    <img :src="meal.strMealThumb" :alt="meal.strMeal" class="border-radius-5" loading="lazy">
                 </div>
                 <div class="divider"></div>
                 <div class="meals__container__card__contents">
@@ -30,7 +30,7 @@
                         </div>
                     </div>
                     <div class="meals__container__card__contents__button">
-                        <button class="default-button">Cook it!</button>
+                        <button class="default-button" @click="seeFullDetails(meal.idMeal)">Cook it!</button>
                     </div>
                 </div>
             </div>
@@ -44,14 +44,17 @@
 
 <script>
 import { ref } from "vue";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 import { getMealsByName, getMeals } from "../composables/PonMeals";
 export default {
     setup() {
-        let pageLoadingState = ref(true);
         let route = useRoute();
+        let router = useRouter();
+        let pageLoadingState = ref(true);
         let searchedMeals = ref(null);
         let foodName = route.params.name;
+        let pageTitle = ref(`${foodName.charAt(0).toUpperCase()}${foodName.substring(1)}`);
+
         foodName && getMealsByName(foodName).then((response) => {
             if (response.status === 200) {
                 searchedMeals.value = getMeals.value;
@@ -61,12 +64,19 @@ export default {
             alert(response)
         })
 
-        let pageTitle = ref(`${foodName.charAt(0).toUpperCase()}${foodName.substring(1)}`);
+        const seeFullDetails = (id) => {
+            if (id) {
+                router.push({ name: 'full-details', params: { id: id } });
+            }
+
+        }
+
         return {
             pageLoadingState,
             searchedMeals,
             foodName,
-            pageTitle
+            pageTitle,
+            seeFullDetails
         }
     }
 }

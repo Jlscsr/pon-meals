@@ -40,6 +40,7 @@
 
         &__heading {
           @include flex-between;
+          align-items: center;
           flex-wrap: wrap;
 
           &__meal-name {

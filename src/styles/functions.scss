@@ -3,6 +3,11 @@
   align-items: center;
 }
 
+@mixin justify-center {
+  display: flex;
+  justify-content: center;
+}
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
@@ -12,11 +17,9 @@
 @mixin flex-between {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 @mixin flex-column {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
