@@ -10,7 +10,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: "/",
+      path: "/recipe-app-project",
       name: "search-page",
       component: SearchView,
     },
