@@ -57,6 +57,7 @@
       margin-inline: auto;
 
       &__ingredients {
+        padding: $sm 0;
         ul {
           li {
             list-style: circle;
@@ -67,6 +68,7 @@
       &__instructions {
         width: 100%;
         max-width: 50%;
+        padding: $sm 0;
         text-align: justify;
       }
     }

@@ -1,7 +1,7 @@
 import { readonly, ref } from "vue";
 import axios from "axios";
 
-const baseUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=";
+const baseUrl = "https://www.themealdb.cssom/api/json/v1/1/search.php?s=";
 const httpGet = axios.get;
 
 const setMeals = ref(null);
@@ -15,7 +15,7 @@ const getMealsByName = async (name) => {
     }
     return response;
   } catch (error) {
-    return Promise.reject(error.status);
+    return Promise.reject(error.code);
   }
 };
 

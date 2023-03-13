@@ -1,0 +1,4 @@
+--> Categories Page
+    --> requests
+    --> Display
+    --> functionality
