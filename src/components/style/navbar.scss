@@ -9,13 +9,14 @@
 
   &__navbar {
     @include align-center;
+    justify-content: center;
 
     &__logo {
       margin-right: $lg;
       a,
       span {
         font-family: $bold-font;
-        font-size: $ft-lg;
+        font-size: $ft-xl;
       }
     }
     &__nav-links {

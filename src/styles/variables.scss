@@ -20,10 +20,10 @@ $semibold-font: "Open Sans Semibold", sans-serif;
 $bold-font: "Open Sans bold", sans-serif;
 
 // App Breakpoints
-$sm-screen: 30em;
-$md-screen: 48em;
-$lg-screen: 62em;
-$xl-screen: 75em;
+$sm-screen: 30em; // 480 px
+$md-screen: 48em; // 768 px
+$lg-screen: 62em; // 992 px
+$xl-screen: 75em; // 1200 px
 
 // utility sizes - Paddings, margins
 $xs: 0.4em;

@@ -5,7 +5,8 @@
         </div>
         <div class="divider"></div>
         <div class="meals__container">
-            <div v-for="meal in searchedMeals" :key="meal.idMeal" class="meals__container__card border-radius-5">
+            <div v-if="searchedMeals" v-for="meal in searchedMeals" :key="meal.idMeal"
+                class="meals__container__card border-radius-5">
                 <div class="meals__container__card__img border-radius-3">
                     <img :src="meal.strMealThumb" :alt="meal.strMeal" class="border-radius-5" loading="lazy">
                 </div>
@@ -34,7 +35,11 @@
                     </div>
                 </div>
             </div>
+            <div v-else class="no-search-result">
+                <h2>No Result Found 👀</h2>
+            </div>
         </div>
+
 
     </div>
     <div v-else class="loading-container">

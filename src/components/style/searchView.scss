@@ -1,5 +1,9 @@
 @import "../../styles/functions.scss";
 @import "../../styles/variables.scss";
+/* $sm-screen: 30em; // 480 px
+$md-screen: 48em; // 768 px
+$lg-screen: 62em; // 992 px
+$xl-screen: 75em; // 1200 px */
 .search-view {
   @include flex-center;
   &__content {
@@ -12,6 +16,10 @@
       span {
         font-family: $light-font;
         font-size: $ft-lg;
+
+        @include respond-to($sm-screen) {
+          font-size: $ft-md;
+        }
       }
     }
     &__input-container {

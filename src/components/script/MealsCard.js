@@ -19,8 +19,10 @@ export default {
         if (response.status === 200) {
           searchedMeals.value = getMeals.value;
           pageLoadingState.value = false;
+          console.log(searchedMeals.value);
         }
       } catch (error) {
+        console.log(error);
         console.log("Something Went wrong 🫤");
       }
     };

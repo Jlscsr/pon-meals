@@ -15,16 +15,6 @@ const router = createRouter({
       component: SearchView,
     },
     {
-      path: "/categories",
-      name: "categories",
-      component: () => import("./components/CategoriesView.vue"),
-    },
-    {
-      path: "/countries",
-      name: "countries",
-      component: () => import("./components/CountriesView.vue"),
-    },
-    {
       path: "/show-meals/:name",
       name: "show-meals",
       component: () => import("./components/MealsCard.vue"),
