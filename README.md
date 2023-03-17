@@ -50,6 +50,10 @@ Please access the application by clicking [here](https://github.com/Jlscsr/pon-m
 
 Contributions to this project are welcome. If you find a bug or would like to suggest a new feature, please create an issue on the project's GitHub page.
 
+## Attributions
+
+<a href="https://www.flaticon.com/free-icons/arrow" title="Arrow icons created by Stockio - Flaticon">Arrow icons created by Stockio - Flaticon</a>
+
 # Vue 3 + Vite
 
 This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
