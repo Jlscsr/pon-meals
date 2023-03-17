@@ -4,7 +4,7 @@ Global styles for app components
 
 /* Defines height and width of the page container */
 .page-container {
-  height: calc(100vh - 90px);
+  height: calc(100vh - 100px);
   max-width: $mx-width;
   margin-right: auto;
   margin-left: auto;
@@ -80,6 +80,19 @@ Global styles for app components
       to {
         transform: rotate(360deg);
       }
+    }
+  }
+}
+
+.github-link {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  a {
+    svg {
+      width: 40px;
+      max-width: 100%;
     }
   }
 }
