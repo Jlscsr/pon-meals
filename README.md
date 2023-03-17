@@ -42,6 +42,10 @@ npm run dev
 
 To use the app, simply navigate to the local server provided by Vite in your browser. You will see a list of meals displayed on the screen. Click on a meal to view its details.
 
+## Access the Application
+
+Please access the application by clicking [here](https://github.com/Jlscsr/pon-meals/tree/gh-pages).
+
 ## Contributing
 
 Contributions to this project are welcome. If you find a bug or would like to suggest a new feature, please create an issue on the project's GitHub page.
