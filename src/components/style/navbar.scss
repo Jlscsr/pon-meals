@@ -17,6 +17,10 @@
       span {
         font-family: $bold-font;
         font-size: $ft-xl;
+
+        @include respond-to($xs-screen) {
+          font-size: $ft-lg;
+        }
       }
     }
     &__nav-links {

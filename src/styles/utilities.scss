@@ -1,320 +1,80 @@
-.outline {
-  outline: 1px solid red;
+// Define padding and margin sizes using SCSS variables
+$padding-margin-sizes: (
+  xs: $xs,
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl,
+  xxl: $xxl,
+);
+
+// Generate utility classes for padding and margin using SCSS loops
+@each $name, $value in $padding-margin-sizes {
+  // Padding utility classes
+  .pa-#{$name} {
+    padding: $value;
+  }
+  .px-#{$name} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  .py-#{$name} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+  .pt-#{$name} {
+    padding-top: $value;
+  }
+  .pr-#{$name} {
+    padding-right: $value;
+  }
+  .pb-#{$name} {
+    padding-bottom: $value;
+  }
+  .pl-#{$name} {
+    padding-left: $value;
+  }
+
+  // Margin utility classes
+  .ma-#{$name} {
+    margin: $value;
+  }
+  .mx-#{$name} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .my-#{$name} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+  .mt-#{$name} {
+    margin-top: $value;
+  }
+  .mr-#{$name} {
+    margin-right: $value;
+  }
+  .mb-#{$name} {
+    margin-bottom: $value;
+  }
+  .ml-#{$name} {
+    margin-left: $value;
+  }
 }
 
-// padding xtra small
-.pa-xs {
-  padding: $xs;
-}
-.px-xs {
-  padding-left: xs;
-  padding-right: xs;
-}
-.py-xs {
-  padding-top: xs;
-  padding-bottom: xs;
-}
-.pt-xs {
-  padding-top: $xs;
-}
-.pr-xs {
-  padding-right: $xs;
-}
-.pb-xs {
-  padding-bottom: $xs;
-}
-.pl-xs {
-  padding-left: $xs;
-}
-
-// padding small
-.pa-sm {
-  padding: $sm;
-}
-.px-sm {
-  padding-left: $sm;
-  padding-right: $sm;
-}
-.py-sm {
-  padding-top: $sm;
-  padding-bottom: $sm;
-}
-.pt-sm {
-  padding-top: $sm;
-}
-.pr-sm {
-  padding-right: $sm;
-}
-.pb-sm {
-  padding-bottom: $sm;
-}
-.pl-sm {
-  padding-left: $sm;
-}
-
-// padding md
-.pa-md {
-  padding: $md;
-}
-.px-md {
-  padding-left: $md;
-  padding-right: $md;
-}
-.py-md {
-  padding-top: $md;
-  padding-bottom: $md;
-}
-.pt-md {
-  padding-top: $md;
-}
-.pr-md {
-  padding-right: $md;
-}
-.pb-md {
-  padding-bottom: $md;
-}
-.pl-md {
-  padding-left: $md;
-}
-
-// padding large
-.pa-lg {
-  padding: $lg;
-}
-.px-lg {
-  padding-left: $lg;
-  padding-right: $lg;
-}
-.py-lg {
-  padding-top: $lg;
-  padding-bottom: $lg;
-}
-.pt-lg {
-  padding-top: $lg;
-}
-.pr-lg {
-  padding-right: $lg;
-}
-.pb-lg {
-  padding-bottom: $lg;
-}
-.pl-lg {
-  padding-left: $lg;
-}
-
-// padding xtra large
-.pa-xl {
-  padding: $xl;
-}
-.px-xl {
-  padding-left: $xl;
-  padding-right: $xl;
-}
-.py-xl {
-  padding-top: $xl;
-  padding-bottom: $xl;
-}
-.pt-xl {
-  padding-top: $xl;
-}
-.pr-xl {
-  padding-right: $xl;
-}
-.pb-xl {
-  padding-bottom: $xl;
-}
-.pl-xl {
-  padding-left: $xl;
-}
-
-// padding xxtra large
-.pa-xxl {
-  padding: $xxl;
-}
-.px-xxl {
-  padding-left: $xxl;
-  padding-right: $xxl;
-}
-.py-xxl {
-  padding-top: $xxl;
-  padding-bottom: $xxl;
-}
-.pt-xxl {
-  padding-top: $xxl;
-}
-.pr-xxl {
-  padding-right: $xxl;
-}
-.pb-xxl {
-  padding-bottom: $xxl;
-}
-.pl-xxl {
-  padding-left: $xxl;
-}
-
-// margin xtra small
-.ma-xs {
-  margin: $xs;
-}
-.mx-xs {
-  margin-left: $xs;
-  margin-right: $xs;
-}
-.my-xs {
-  margin-top: $xs;
-  margin-bottom: $xs;
-}
-.mt-xs {
-  margin-top: $xs;
-}
-.mr-xs {
-  margin-right: $xs;
-}
-.mb-xs {
-  margin-bottom: $xs;
-}
-.ml-xs {
-  margin-left: $xs;
-}
-
-// margin small
-.ma-sm {
-  margin: $sm;
-}
-.mx-sm {
-  margin-left: $sm;
-  margin-right: $sm;
-}
-.my-sm {
-  margin-top: $sm;
-  margin-bottom: $sm;
-}
-.mt-sm {
-  margin-top: $sm;
-}
-.mr-sm {
-  margin-right: $sm;
-}
-.mb-sm {
-  margin-bottom: $sm;
-}
-.ml-sm {
-  margin-left: $sm;
-}
-
-// margin medium
-.ma-md {
-  margin: $md;
-}
-.mx-md {
-  margin-left: $md;
-  margin-right: $md;
-}
-.my-md {
-  margin-top: $md;
-  margin-bottom: $md;
-}
-.mt-md {
-  margin-top: $md;
-}
-.mr-md {
-  margin-right: $md;
-}
-.mb-md {
-  margin-bottom: $md;
-}
-.ml-md {
-  margin-left: $md;
-}
-
-// margin large
-.ma-lg {
-  margin: $lg;
-}
-.mx-lg {
-  margin-left: $lg;
-  margin-right: $lg;
-}
-.my-lg {
-  margin-top: $lg;
-  margin-bottom: $lg;
-}
-.mt-lg {
-  margin-top: $lg;
-}
-.mr-lg {
-  margin-right: $lg;
-}
-.mb-lg {
-  margin-bottom: $lg;
-}
-.ml-lg {
-  margin-left: $lg;
-}
-
-// margin xtra large
-.ma-xl {
-  margin: $xl;
-}
-.mx-xl {
-  margin-left: $xl;
-  margin-right: $xl;
-}
-.my-xl {
-  margin-top: $xl;
-  margin-bottom: $xl;
-}
-.mt-xl {
-  margin-top: $xl;
-}
-.mr-xl {
-  margin-right: $xl;
-}
-.mb-xl {
-  margin-bottom: $xl;
-}
-.ml-xl {
-  margin-left: $xl;
-}
-
-// margin xxtra large
-.ma-xxl {
-  margin: $xxl;
-}
-.mx-xxl {
-  margin-left: $xxl;
-  margin-right: $xxl;
-}
-.my-xxl {
-  margin-top: $xxl;
-  margin-bottom: $xxl;
-}
-.mt-xxl {
-  margin-top: $xxl;
-}
-.mr-xxl {
-  margin-right: $xxl;
-}
-.mb-xxl {
-  margin-bottom: $xxl;
-}
-.ml-xxl {
-  margin-left: $xxl;
-}
-
-/* custom style for router link */
+// Define custom style for router link with a class name of "active-link"
 .active-link {
   color: $accent-1;
   transition: all 0.125s ease-out;
 }
 
-/* Border radius */
+// Generate utility classes for border radius using SCSS loops
 @for $i from 3 through 8 {
   .border-radius-#{$i} {
     border-radius: #{$i}px;
   }
 }
 
+// Define two utility classes for relative and absolute positioning
 .relative {
   position: relative;
 }

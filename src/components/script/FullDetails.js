@@ -1,16 +1,23 @@
 import { ref, computed } from "vue";
 import { useRoute } from "vue-router";
 import { getMeals } from "../../composables/PonMeals";
+
 export default {
   setup() {
     let { params } = useRoute();
     let mealsDetails = ref(null);
 
+    // If a meal ID is provided in the route params, find and display its details.
     if (params.id) {
       let meals = getMeals.value;
       mealsDetails.value = meals.find((meal) => meal.idMeal === params.id);
     }
 
+    /**
+     * Returns an array containing the ingredients and their measures for a meal.
+     * @param {object} meal - The meal object.
+     * @returns An array of strings, each containing an ingredient and its measure.
+     */
     const getIngredients = (meal) => {
       let ingredients = [];
 

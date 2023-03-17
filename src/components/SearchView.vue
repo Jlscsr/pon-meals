@@ -6,7 +6,7 @@
             </div>
             <div class="search-view__content__input-container">
                 <div class="search-view__content__input-container__input">
-                    <input v-model="foodName" type="text" placeholder="e.g. eggs, chicken, or soup" name="foodname" required
+                    <input v-model="foodName" type="text" placeholder="e.g. 'A' or 'Egg'" name="foodname" required
                         @focus="onFocused()" autocomplete="off" aria-label="Food name" aria-required="true"
                         @keyup.enter="searchMeals(foodName)">
                     <div class="search-view__content__error-container" :class="{ 'hide-error': isInputFocused }">
@@ -31,7 +31,7 @@
     </div>
 </template>
 
-<script src="./script/search.js"></script>
+<script src="./script/Search.js"></script>
 
 <style lang="scss">
 @import "./style/searchView.scss";

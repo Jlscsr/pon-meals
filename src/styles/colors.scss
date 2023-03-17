@@ -1,4 +1,6 @@
-/* Background colors */
+/* Background colors /
+/ Define classes for primary, secondary, and accent-1 and accent-2 background colors */
+
 .bg-primary {
   background-color: $primary;
 }
@@ -15,7 +17,9 @@
   background-color: $accent-2;
 }
 
-/* Text colors */
+/* Text colors /
+  / Define classes for primary, secondary, and accent-1 and accent-2 text colors */
+
 .text-primary {
   color: $primary;
 }
@@ -31,3 +35,7 @@
 .text-accent-2 {
   color: $accent-2;
 }
+
+/* This code defines classes for background and text colors using SCSS variables.
+  By using these classes throughout the codebase, it is easy to update the colors 
+  across the entire application simply by updating the SCSS variables. */

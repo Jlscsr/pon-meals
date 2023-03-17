@@ -1,6 +1,6 @@
 /* OPEN SANS FONT */
 
-/* Italic Font */
+/* Define font face for Open Sans Italic, Light, Regular, Semibold, and Bold */
 
 @font-face {
   font-family: "Open Sans Italic";
@@ -32,8 +32,14 @@
   src: url("/src/styles/fonts/OpenSans-Bold.ttf") format("truetype");
 }
 
+/* Set font-family to "Open Sans Regular" for all elements, including pseudo-elements */
+
 *,
 *::before,
 *::after {
   font-family: "Open Sans Regular", sans-serif;
 }
+
+/* This code defines font faces for the Open Sans font family with different weights and styles, such as Italic, Light, Regular, Semibold, and Bold.
+  By using the "font-family" property with the value "Open Sans Regular" for all elements, including pseudo-elements, we set the default font for the 
+  entire application to Open Sans Regular, with fallback to a sans-serif font in case Open Sans is not available. */

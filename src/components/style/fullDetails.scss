@@ -67,9 +67,13 @@
 
       &__instructions {
         width: 100%;
-        max-width: 50%;
+        max-width: 350px;
         padding: $sm 0;
         text-align: justify;
+
+        @include respond-to($sm-screen) {
+          text-align: left;
+        }
       }
     }
   }
