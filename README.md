@@ -52,7 +52,7 @@ Contributions to this project are welcome. If you find a bug or would like to su
 
 ## Attributions
 
-<a href="https://www.flaticon.com/free-icons/arrow" title="Arrow icons created by Stockio - Flaticon">Arrow icons created by Stockio - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/arrow" title="Arrow icons created by Stockio - Flaticon">Arrow icons created by Stockio - Flaticon</a><br>
 <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons created by Pixel perfect - Flaticon</a>
 
 # Vue 3 + Vite
