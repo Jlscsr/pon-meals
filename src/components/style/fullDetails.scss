@@ -22,6 +22,10 @@
         @include flex-column;
         gap: $xs;
 
+        &__name {
+          font-size: $ft-md;
+        }
+
         &__category-country {
           @include align-center;
           column-gap: $md;

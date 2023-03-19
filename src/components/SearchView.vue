@@ -1,19 +1,19 @@
 <template>
-    <div class="search-view">
+    <section class="search-view">
         <div class="search-view__content">
-            <div class="search-view__content__ask">
+            <header class="search-view__content__ask">
                 <h1>Feeling hungry? Let's cook something <span class="text-accent-1">delicious</span>!</h1>
-            </div>
+            </header>
             <div class="search-view__content__input-container">
-                <div class="search-view__content__input-container__input">
+                <section class="search-view__content__input-container__input">
                     <input v-model="foodName" type="text" placeholder="e.g. 'A' or 'Egg'" name="foodname" required
                         @focus="onFocused()" autocomplete="off" aria-label="Food name" aria-required="true"
                         @keyup.enter="searchMeals(foodName)">
                     <div class="search-view__content__error-container" :class="{ 'hide-error': isInputFocused }">
                         <p>Invalid input!</p>
                     </div>
-                </div>
-                <div class="search-view__content__button-container">
+                </section>
+                <section class="search-view__content__button-container">
                     <button class="button-svg border-radius-3" @click="searchMeals(foodName)">
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
                             xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 512.009 512.009"
@@ -25,10 +25,10 @@
                             </g>
                         </svg>
                     </button>
-                </div>
+                </section>
             </div>
         </div>
-    </div>
+    </section>
 </template>
 
 <script src="./script/Search.js"></script>

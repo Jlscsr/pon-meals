@@ -1,17 +1,17 @@
 <template>
-    <div v-if="!pageLoadingState" class="meals">
-        <div class="meals__header">
+    <section v-if="!pageLoadingState" class="meals">
+        <header class="meals__header">
             <h1>{{ pageTitle }}</h1>
-        </div>
+        </header>
         <div class="divider"></div>
-        <div class="meals__container">
+        <section class="meals__container">
             <div v-if="searchedMeals" v-for="meal in searchedMeals" :key="meal.idMeal"
                 class="meals__container__card border-radius-5">
-                <div class="meals__container__card__img border-radius-3">
+                <figure class="meals__container__card__img border-radius-3">
                     <img :src="meal.strMealThumb" :alt="meal.strMeal" class="border-radius-5" loading="lazy">
-                </div>
+                </figure>
                 <div class="divider"></div>
-                <div class="meals__container__card__contents">
+                <section class="meals__container__card__contents">
                     <div class="meals__container__card__contents__heading">
                         <div class="meals__container__card__contents__heading__meal-name">
                             <h3>{{ meal.strMeal }}</h3>
@@ -33,15 +33,13 @@
                     <div class="meals__container__card__contents__button">
                         <button class="default-button" @click="seeFullDetails(meal.idMeal)">Cook it!</button>
                     </div>
-                </div>
+                </section>
             </div>
             <div v-else class="no-search-result">
                 <h2>No Result Found 👀</h2>
             </div>
-        </div>
-
-
-    </div>
+        </section>
+    </section>
     <div v-else class="loading-container">
         <div class="loading"></div>
     </div>

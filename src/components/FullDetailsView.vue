@@ -1,7 +1,7 @@
 <template>
-    <div class="meal">
+    <section class="meal mt-lg">
         <div class="meal__card">
-            <div class="meal__card__first-row">
+            <section class="meal__card__first-row">
                 <div class="meal__card__first-row__meal-details">
                     <div class="meal__card__first-row__meal-details__name">
                         <h1>{{ mealsDetails.strMeal }}</h1>
@@ -14,11 +14,11 @@
                         <a :href="mealsDetails.strYoutube" target="_blank" class="default-button">Video Tutorial</a>
                     </div>
                 </div>
-                <div class="meal__card__first-row__meal-img">
+                <figure class="meal__card__first-row__meal-img">
                     <img :src="mealsDetails.strMealThumb" :alt="mealsDetails.strMeall">
-                </div>
-            </div>
-            <div class="meal__card__second-row">
+                </figure>
+            </section>
+            <section class="meal__card__second-row">
                 <div class="meal__card__second-row__ingredients">
                     <ul>
                         <li v-for="ingredient in ingredients" :key="ingredient">
@@ -29,9 +29,9 @@
                 <div class="meal__card__second-row__instructions">
                     <p>{{ mealsDetails.strInstructions }}</p>
                 </div>
-            </div>
+            </section>
         </div>
-    </div>
+    </section>
 </template>
 
 <script src="./script/FullDetails"></script>

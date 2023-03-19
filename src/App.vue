@@ -1,12 +1,12 @@
 <template>
-  <div class="app relative">
+  <main class="app relative">
     <!-- Header -->
     <NavbarView />
     <!-- Content -->
-    <div class="page-container relative">
+    <section class="page-container relative">
       <router-view />
-    </div>
-    <div class="github-link">
+    </section>
+    <section class="github-link">
       <a href="https://github.com/Jlscsr/pon-meals" target="_blank" title="View repo">
         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
           xmlns:svgjs="http://svgjs.com/svgjs" x="0" y="0" viewBox="0 0 512 512" xml:space="preserve" class="">
@@ -17,8 +17,8 @@
           </g>
         </svg>
       </a>
-    </div>
-  </div>
+    </section>
+  </main>
 </template>
 
 <script>
