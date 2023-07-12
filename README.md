@@ -44,7 +44,7 @@ To use the app, simply navigate to the local server provided by Vite in your bro
 
 ## Access the Application
 
-Please access the application by clicking [here](https://github.com/Jlscsr/pon-meals/tree/gh-pages).
+Please access the application by clicking [here](https://jlscsr.github.io/pon-meals/).
 
 ## Contributing
 
