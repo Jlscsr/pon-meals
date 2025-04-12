@@ -26,12 +26,15 @@ Global styles for app components
   font-size: $ft-sm;
   background-color: $accent-2;
   border: none;
-  border-radius: 5px;
-  transition: all 0.125s ease-out;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out;
 
   /* Styles for when the mouse hovers over the button */
   &:hover {
     background-color: $accent-1;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 }
 

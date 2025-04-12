@@ -5,7 +5,9 @@
   width: 100%;
   max-width: $mx-width;
   margin-inline: auto;
-  border-bottom: 1px solid $accent-1;
+  background-color: $primary;
+  border-bottom: 2px solid rgba($accent-2, 0.15);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 
   &__navbar {
     @include align-center;
@@ -17,6 +19,8 @@
       span {
         font-family: $bold-font;
         font-size: $ft-xl;
+        color: $secondary;
+        transition: color 0.3s ease;
 
         @include respond-to($xs-screen) {
           font-size: $ft-lg;
@@ -31,6 +35,13 @@
         &__route {
           font-family: $light-font;
           font-size: $ft-md;
+          color: $secondary;
+          position: relative;
+          transition: color 0.3s ease;
+          
+          &:hover {
+            color: $accent-1;
+          }
         }
       }
     }
